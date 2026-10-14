@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="km">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ខ្សែសម្ពន្ធព្រះគម្ពីរ — Khmer Bible Cross-References</title>
+<meta name="description" content="Interactive arc diagram of 340,000+ Bible cross-references, linked live to the Khmer Old Version 1954 (ពគប).">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;600&family=Battambang:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="title">
+    <h1>ខ្សែសម្ពន្ធព្រះគម្ពីរ</h1>
+    <p>Bible Cross-References · ព្រះគម្ពីរបរិសុទ្ធ ១៩៥៤ (ពគប)</p>
+  </div>
+  <form id="search" autocomplete="off">
+    <input id="q" type="search" placeholder="ស្វែងរក៖ យ៉ូហាន ៣:១៦ · John 3:16" aria-label="Search reference">
+    <button type="submit">ស្វែងរក</button>
+  </form>
+</header>
+
+<section class="controls">
+  <label>សៀវភៅ
+    <select id="book"><option value="">— ទាំងអស់ —</option></select>
+  </label>
+  <label class="range">សំឡេងគាំទ្រអប្បបរមា <b id="vv">៥</b>
+    <input id="votes" type="range" min="1" max="60" value="5">
+  </label>
+  <label class="chk"><input id="otnt" type="checkbox"> តែសញ្ញាចាស់ ↔ សញ្ញាថ្មី</label>
+  <span id="stats" class="muted"></span>
+</section>
+
+<main>
+  <div id="stage">
+    <canvas id="arcs"></canvas>
+    <canvas id="overlay"></canvas>
+    <div id="tip" hidden></div>
+  </div>
+  <aside id="panel">
+    <div id="status"><span class="dot"></span><span id="statusText">កំពុងភ្ជាប់ទៅអត្ថបទ ពគប…</span></div>
+    <div id="detail">
+      <h2>សូមចុចលើជំពូកណាមួយ</h2>
+      <p class="muted">ធ្នូនីមួយៗតភ្ជាប់ជំពូកពីរ ដែលមានខគម្ពីរយោងគ្នា។ ពណ៌បង្ហាញចម្ងាយ៖ ស្វាយ = ជិត, បៃតង/លឿង = ឆ្ងាយ។ របារខាងក្រោមបង្ហាញចំនួនខក្នុងជំពូកនីមួយៗ។</p>
+      <p class="muted">Each arc links two chapters that share a cross-reference. Hover to highlight, click a chapter to read its references in Khmer.</p>
+    </div>
+  </aside>
+</main>
+
+<footer>
+  ទិន្នន័យសម្ពន្ធ៖ <a href="https://www.openbible.info/labs/cross-references/" target="_blank" rel="noopener">OpenBible.info</a> (CC-BY) ·
+  អត្ថបទ ពគប ផ្ទុកផ្ទាល់ពី <a href="https://github.com/Beblia/Holy-Bible-XML-Format" target="_blank" rel="noopener">Beblia</a> ·
+  ការរចនាបំផុសពី Chris Harrison &amp; Christoph Römhild ·
+  <a href="https://github.com/khgeo" target="_blank" rel="noopener">YAM Sarath</a>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
